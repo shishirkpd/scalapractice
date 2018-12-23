@@ -21,4 +21,14 @@ class FindLengthOfListSpec extends FlatSpec {
   it should "return the 0 for the empty list" in {
     assert(findLengthOfList.length(List.empty) == 0)
   }
+
+  "FindLengthOfList.lengthWithFoldLeft" should "return the size for the given list" in {
+    val list = 'a' to 'z' toList
+
+    assert(findLengthOfList.lengthWithFoldLeft(list) == 26)
+  }
+
+  it should "return the 0 for the empty list" in {
+    assert(findLengthOfList.lengthWithFoldLeft(List.empty) == 0)
+  }
 }
