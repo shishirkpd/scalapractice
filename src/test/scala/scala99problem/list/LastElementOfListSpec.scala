@@ -10,4 +10,10 @@ class LastElementOfListSpec extends FlatSpec{
     val list = (1 to 5).toList
     assert(lastElementOfList.lastElementWithTailRecursion(list) == 5)
   }
+
+  it should "return the last element of the list of char" in {
+    val lastElementOfList = new LastElementOfList()
+    val list = ('a' to 'e').toList
+    assert(lastElementOfList.lastElementWithTailRecursion(list) == 'e')
+  }
 }
