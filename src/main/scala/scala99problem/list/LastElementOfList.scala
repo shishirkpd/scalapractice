@@ -2,9 +2,9 @@ package scala99problem.list
 
 class LastElementOfList {
 
-  def lastElementWithTailRecursion[A](list: List[A]): A = list match {
+  def last[A](list: List[A]): A = list match {
     case head :: Nil => head
-    case _ :: tail => lastElementWithTailRecursion(tail)
+    case _ :: tail => last(tail)
     case _  => throw new NoSuchElementException
   }
 }
