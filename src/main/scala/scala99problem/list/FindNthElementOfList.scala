@@ -21,7 +21,7 @@ class FindNthElementOfList {
     * case 1: will be invoked => List(4,5).length == 2 it will return the head of the list which is 4
     * so the result will be 4
     */
-  
+
   def lastNthElement[A](list: List[A], lastNth: Int): A = list match {
     case tail if tail.length == lastNth => tail.head
     case _ :: tail => lastNthElement(tail, lastNth)

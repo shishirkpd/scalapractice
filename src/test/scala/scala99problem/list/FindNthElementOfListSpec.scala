@@ -17,6 +17,12 @@ class FindNthElementOfListSpec extends FlatSpec {
     assert(findNthElementOfList.lastNthElement(list, 3) == 'b')
   }
 
+  it should "return the nth element in the list of any" in {
+    val list = List(1,2,3, 'a', 4.0, 'b')
+
+    assert(findNthElementOfList.lastNthElement(list, 2) == 4.0)
+  }
+
   it should "return the exception for one element in list" in {
     val list = List(1)
 
@@ -24,6 +30,4 @@ class FindNthElementOfListSpec extends FlatSpec {
       findNthElementOfList.lastNthElement(list, 2)
     }
   }
-
-
 }
