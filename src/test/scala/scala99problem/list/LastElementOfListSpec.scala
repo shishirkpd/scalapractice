@@ -17,10 +17,22 @@ class LastElementOfListSpec extends FlatSpec {
     assert(lastElementOfList.lastElementWithTailRecursion(list) == 'e')
   }
 
-  it should "throw  NoSuchElementException is list is empty " in {
+  it should "return the last element of the list of int for one element in list" in {
+    val lastElementOfList = new LastElementOfList()
+    val list = List('a')
+    assert(lastElementOfList.lastElementWithTailRecursion(list) == 'a')
+  }
+
+  it should "throw  NoSuchElementException is list is Nil " in {
     val list = Nil
     assertThrows[NoSuchElementException] {
       lastElementOfList.lastElementWithTailRecursion(list)
+    }
+  }
+
+  it should "throw  NoSuchElementException is list is empty " in {
+    assertThrows[NoSuchElementException] {
+      lastElementOfList.lastElementWithTailRecursion(List.empty)
     }
   }
 }
