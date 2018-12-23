@@ -7,7 +7,7 @@ class FindLengthOfList {
     case _ :: tail => lengthN(tail, 1)
   }
 
-  def lengthN[A](list: List[A], count: Int): Int = list match {
+  private def lengthN[A](list: List[A], count: Int): Int = list match {
     case Nil => count
     case _ :: tail => lengthN(tail, count + 1)
   }
