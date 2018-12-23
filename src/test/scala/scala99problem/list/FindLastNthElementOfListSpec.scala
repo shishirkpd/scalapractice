@@ -2,9 +2,9 @@ package scala99problem.list
 
 import org.scalatest.FlatSpec
 
-class FindNthElementOfListSpec extends FlatSpec {
+class FindLastNthElementOfListSpec extends FlatSpec {
 
-  val findNthElementOfList = new FindNthElementOfList()
+  val findNthElementOfList = new FindLastNthElementOfList()
 
   "FindNthElementOfListTest.nthElement" should "return the nth element in the list of int" in {
     val list = 1 to 15 toList

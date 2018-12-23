@@ -12,13 +12,11 @@ class LastElementOfListSpec extends FlatSpec {
   }
 
   it should "return the last element of the list of char" in {
-    val lastElementOfList = new LastElementOfList()
     val list = ('a' to 'e').toList
     assert(lastElementOfList.last(list) == 'e')
   }
 
   it should "return the last element of the list of int for one element in list" in {
-    val lastElementOfList = new LastElementOfList()
     val list = List('a')
     assert(lastElementOfList.last(list) == 'a')
   }
