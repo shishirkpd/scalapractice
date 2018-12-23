@@ -1,6 +1,6 @@
 package scala99problem.list
 
-class FindNthElementOfList {
+class FindLastNthElementOfList {
 
   /***
     *
