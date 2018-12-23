@@ -2,7 +2,7 @@ package scala99problem.list
 
 import org.scalatest.FlatSpec
 
-class LastElementOfListSpec extends FlatSpec{
+class LastElementOfListSpec extends FlatSpec {
 
   val lastElementOfList = new LastElementOfList()
 
@@ -15,5 +15,12 @@ class LastElementOfListSpec extends FlatSpec{
     val lastElementOfList = new LastElementOfList()
     val list = ('a' to 'e').toList
     assert(lastElementOfList.lastElementWithTailRecursion(list) == 'e')
+  }
+
+  it should "throw  NoSuchElementException is list is empty " in {
+    val list = Nil
+    assertThrows[NoSuchElementException] {
+      lastElementOfList.lastElementWithTailRecursion(list)
+    }
   }
 }
