@@ -3,7 +3,7 @@ def reverse[A](list: List[A], acc: List[A]): List[A] = list match {
   case head :: xs => reverse(xs, head +: acc)
 }
 
-reverse((1 to 5).toList, Nil)
+reverse((1 to 5).toList.flatten, Nil)
 
 val str = "this is the reverse"
 
