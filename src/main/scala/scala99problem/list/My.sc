@@ -16,3 +16,15 @@ def revStr(str: String): String = {
 }
 
 revStr(str)
+
+val conList = List('a', 'a', 'a', 'a', 'b', 'c', 'c', 'a', 'a', 'd', 'e', 'e', 'e', 'e')
+
+val res = conList.foldLeft(List(List.empty[Char])){
+  (res, ele) => if(res.last.nonEmpty && res.last.last == ele) {
+     res.init ::: List(res.last :+ ele)
+  } else {
+    res ::: List(List(ele))
+  }
+}.filter(_.nonEmpty)
+
+println(res)
