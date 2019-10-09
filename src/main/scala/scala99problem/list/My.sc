@@ -28,3 +28,7 @@ val res = conList.foldLeft(List(List.empty[Char])){
 }.filter(_.nonEmpty)
 
 println(res)
+
+val res44 = conList.groupBy(x => x ).map(y => (y._1, y._2.size))
+
+println(res44)
