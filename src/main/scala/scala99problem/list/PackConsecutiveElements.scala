@@ -1,5 +1,7 @@
 package scala99problem.list
 
+import scala.annotation.tailrec
+
 class PackConsecutiveElements {
   def packWithFold[T](list: List[T]): List[List[T]] = {
     list.foldLeft(List(List.empty[T])){

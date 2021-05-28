@@ -17,6 +17,7 @@ class LongestSubstringNoRepeatChar {
         if(temp.length > longest.length )
           longest = temp
         a + b
+
       }
     })
 
