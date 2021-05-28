@@ -1,8 +1,8 @@
 package extraProblems
 
-import org.scalatest.FlatSpec
+import org.scalatest.flatspec.AnyFlatSpec
 
-class FactorialSpec extends FlatSpec {
+class FactorialSpec extends AnyFlatSpec {
 
   val fact = new Factorial
 

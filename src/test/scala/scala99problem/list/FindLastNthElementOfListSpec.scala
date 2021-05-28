@@ -1,18 +1,19 @@
 package scala99problem.list
 
-import org.scalatest.FlatSpec
+import org.scalatest.flatspec.AnyFlatSpec
 
-class FindLastNthElementOfListSpec extends FlatSpec {
+
+class FindLastNthElementOfListSpec extends AnyFlatSpec {
 
   val findNthElementOfList = new FindLastNthElementOfList()
 
   "FindNthElementOfListTest.nthElement" should "return the nth element in the list of int" in {
-    val list = 1 to 15 toList
+    val list = (1 to 15).toList
 
     assert(findNthElementOfList.lastNthElement(list, 7) == 9)
   }
   it should "return the nth element in the list of char" in {
-    val list = 'a' to 'd' toList
+    val list = ('a' to 'd').toList
 
     assert(findNthElementOfList.lastNthElement(list, 3) == 'b')
   }

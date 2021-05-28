@@ -1,8 +1,8 @@
 package scala99problem.list
 
-import org.scalatest.FlatSpec
+import org.scalatest.flatspec.AnyFlatSpec
 
-class RemoveConsecutiveDuplicateSpec extends FlatSpec {
+class RemoveConsecutiveDuplicateSpec extends AnyFlatSpec {
 
   val removeConsecutiveDuplicate = new RemoveConsecutiveDuplicate
 

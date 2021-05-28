@@ -1,8 +1,8 @@
 package scala99problem.list
 
-import org.scalatest.FlatSpec
+import org.scalatest.flatspec.AnyFlatSpec
 
-class LastElementOfListSpec extends FlatSpec {
+class LastElementOfListSpec extends AnyFlatSpec {
 
   val lastElementOfList = new LastElementOfList()
 

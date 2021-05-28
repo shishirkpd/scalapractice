@@ -1,8 +1,8 @@
 package scala99problem.list
 
-import org.scalatest.FlatSpec
+import org.scalatest.flatspec.AnyFlatSpec
 
-class FlattenListSpec extends FlatSpec {
+class FlattenListSpec extends AnyFlatSpec {
    val flattenList = new FlattenList
 
   "FlattenList.flatten" should "return a list contain of all element for list of list" in {

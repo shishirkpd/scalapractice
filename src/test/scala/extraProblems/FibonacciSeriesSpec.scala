@@ -1,8 +1,8 @@
 package extraProblems
 
-import org.scalatest.FlatSpec
+import org.scalatest.flatspec.AnyFlatSpec
 
-class FibonacciSeriesSpec extends FlatSpec {
+class FibonacciSeriesSpec extends AnyFlatSpec {
 
   val fib = new FibonacciSeries
 

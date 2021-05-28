@@ -1,8 +1,8 @@
 package scala99problem.list
 
-import org.scalatest.FlatSpec
+import org.scalatest.flatspec.AnyFlatSpec
 
-class ListPalindromeCheckSpec extends FlatSpec {
+class ListPalindromeCheckSpec extends AnyFlatSpec {
 
   val listPalindromeCheck = new ListPalindromeCheck
 

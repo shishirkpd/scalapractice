@@ -1,8 +1,8 @@
 package scala99problem.list
 
-import org.scalatest.FlatSpec
+import org.scalatest.flatspec.AnyFlatSpec
 
-class ReversTraversableSpec extends FlatSpec {
+class ReversTraversableSpec extends AnyFlatSpec {
 
   val reversTraversable = new ReversTraversable
 

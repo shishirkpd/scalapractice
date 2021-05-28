@@ -1,8 +1,8 @@
 package scala99problem.list
 
-import org.scalatest.FlatSpec
+import org.scalatest.flatspec.AnyFlatSpec
 
-class FindNthElementInListSpec extends FlatSpec {
+class FindNthElementInListSpec extends AnyFlatSpec {
   val findNthElementOfList = new FindNthElementInList()
 
   "FindNthElementInList.nthElement" should "return the nth element of the list" in {

@@ -1,8 +1,8 @@
 package scala99problem.list
 
-import org.scalatest.FlatSpec
+import org.scalatest.flatspec.AnyFlatSpec
 
-class PackConsecutiveElementsSpec extends FlatSpec {
+class PackConsecutiveElementsSpec extends AnyFlatSpec {
 
   val packConsecutiveElements = new PackConsecutiveElements
 
