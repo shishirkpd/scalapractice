@@ -38,6 +38,8 @@ class MergeIntervals {
       case (a, b) if a == b =>  res :+ a.toArray
       case (a, b)  if a.last >= b.head && a.head <= b.head && a.last > b.last => res ++ List(Array(a.head, a.last))
       case (a, b)  if a.last >= b.head && a.head <= b.head => res ++ List(Array(a.head, b.last))
+      case (a, b)  if a.last >= b.head && a.head > b.head && a.last > b.last => res ++ List(Array(b.head, a.last))
+      case (a, b)  if a.last >= b.head && a.head > b.head && a.last < b.last => res ++ List(Array(b.head, b.last))
       case (a, b)  if a.last >= b.head && a.head > b.head => res ++ List(Array(b.head, a.last))
       case (a, b)  if a.last >= b.head && a.head < b.head => res ++ List(Array(b.head, b.last))
       case (a, b) => res ++ List(a.toArray, b.toArray)
