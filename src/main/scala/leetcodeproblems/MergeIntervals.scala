@@ -22,26 +22,22 @@ class MergeIntervals {
   def merge(intervals: Array[Array[Int]]): Array[Array[Int]] = {
 
     def _merge(intervals: List[Array[Int]], res: List[Array[Int]]) : List[Array[Int]] = {
-      intervals match {
-        case x :: y :: tail => _merge(tail , mergeTwoArray(x, y, res))
-        case x :: Nil => res :+ x
-        case Nil => res
+      intervals.sortBy(_.head) match {
+      case x :: y :: tail => _merge(tail, _merge2(x, y, res))
+      case x :: Nil  => _merge2(res.last, x, res)
+      case Nil => res
       }
     }
 
    _merge(intervals.toList, Nil).toArray
   }
 
-  private def mergeTwoArray(x: Array[Int], y: Array[Int], res: List[Array[Int]]): List[Array[Int]] = {
+  private def _merge2(x: Array[Int], y: Array[Int], res: List[Array[Int]]): List[Array[Int]] = {
     (x.toList, y.toList) match {
       case (a, Nil) => res :+ a.toArray
-      case (a, b) if a == b =>  res :+ a.toArray
-      case (a, b)  if a.last >= b.head && a.head <= b.head && a.last > b.last => res ++ List(Array(a.head, a.last))
-      case (a, b)  if a.last >= b.head && a.head <= b.head => res ++ List(Array(a.head, b.last))
-      case (a, b)  if a.last >= b.head && a.head > b.head && a.last > b.last => res ++ List(Array(b.head, a.last))
-      case (a, b)  if a.last >= b.head && a.head > b.head && a.last < b.last => res ++ List(Array(b.head, b.last))
-      case (a, b)  if a.last >= b.head && a.head > b.head => res ++ List(Array(b.head, a.last))
-      case (a, b)  if a.last >= b.head && a.head < b.head => res ++ List(Array(b.head, b.last))
+      case (a, b) if a == b => res :+ a.toArray
+      case (a, b) if a.last >= b.head && a.last < b.last => res ++ List(Array(a.head, b.last))
+      case (a, b) if a.last >= b.head => res ++ List(Array(a.head, a.last))
       case (a, b) => res ++ List(a.toArray, b.toArray)
     }
   }

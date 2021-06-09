@@ -56,4 +56,21 @@ class MergeIntervalsSpec extends AnyFlatSpec {
     mergeIntervals.merge(input) shouldBe result
   }
 
+  it should "return the [[0,0], [1,4]] for [[1,4],[0,0]]" in {
+    val input = Array(Array(1,4), Array(0, 0))
+    val result = Array(Array(0,0), Array(1,4))
+    mergeIntervals.merge(input) shouldBe result
+  }
+
+  it should "return the [[2,3], [4,6]] for [[4,6],[2,3]]" in {
+    val input = Array(Array(4, 6), Array(2, 3))
+    val result = Array(Array(2, 3), Array(4, 6))
+    mergeIntervals.merge(input) shouldBe result
+  }
+
+  it should "return the [[0,4]] for [[1,4],[0,2]]" in {
+    val input = Array(Array(1, 4), Array(0, 2))
+    val result = Array(Array(0, 4))
+    mergeIntervals.merge(input) shouldBe result
+  }
 }
