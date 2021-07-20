@@ -1,3 +1,4 @@
+/*
 def reverse[A](list: List[A], acc: List[A]): List[A] = list match {
   case Nil => acc
   case head :: xs => reverse(xs, head +: acc)
@@ -32,4 +33,11 @@ println(res)
 val res44 = conList.groupBy(x => x ).map(y => (y._1, y._2.size))
 
 println(res44)
+*/
 
+
+def twofer(name: String): String = {
+  s"""One for ${if(name.nonEmpty) name else "you"}, one for me."""
+}
+
+twofer("")
