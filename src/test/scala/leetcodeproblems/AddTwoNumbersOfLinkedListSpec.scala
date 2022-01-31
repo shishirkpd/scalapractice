@@ -20,6 +20,6 @@ class AddTwoNumbersOfLinkedListSpec extends AnyFlatSpec {
     val l2 = new ListNode(0, l1)
     val res= new ListNode(7, l2)
     val res1 = addTwoNumbers.addTwoNumbersRec(l3, l6).next
-   addTwoNumbers.addTwoNumbersRec(l3, l6).equals(res) shouldBe true
+   addTwoNumbers.addTwoNumbersRec(l3, l6).equals(res1) shouldBe true
   }
 }
