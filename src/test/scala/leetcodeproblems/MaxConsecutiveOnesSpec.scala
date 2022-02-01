@@ -11,6 +11,6 @@ class MaxConsecutiveOnesSpec extends AnyFlatSpec {
   }
 
   it should "return the sum as 3 for given list for another list" in {
-    assert(maxC.findMaxConsecutiveOnes(Array(1,1,0,1,1,1, 0, 1, 0, 1,1,1,1,1, 0)) == 5)
+    assert(maxC.findMaxConsecutiveOnes_1(Array(1,1,0,1,1,1, 0, 1, 0, 1,1,1,1,1, 0)) == 5)
   }
 }
