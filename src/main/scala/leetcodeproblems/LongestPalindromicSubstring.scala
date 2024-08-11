@@ -26,15 +26,36 @@ class LongestPalindromicSubstring {
    */
 
   def longestPalindrome(s: String): String = {
-    val st: Long = System.currentTimeMillis()
-    var res = List.empty[String]
-    for (i <- 1 to s.length) yield {
-      val a: List[String] = s.split("").sliding(i).map(_.mkString).toList.collect {
-        case x: String if x.reverse.mkString == x.mkString => x.mkString
-      }
-      res = a ++ res
+  if (s == null || s.length == 0) return ""
+  
+  var start = 0
+  var end = 0
+
+  def expandAroundCenter(s: String, left: Int, right: Int): (Int, Int) = {
+    var L = left
+    var R = right
+    while (L >= 0 && R < s.length && s(L) == s(R)) {
+      L -= 1
+      R += 1
     }
-    println("total time", (System.currentTimeMillis() - st))
-    res.head
+    (L + 1, R - 1)
   }
+
+  for (i <- 0 until s.length) {
+    val (left1, right1) = expandAroundCenter(s, i, i)   // Odd length palindrome
+    val (left2, right2) = expandAroundCenter(s, i, i + 1) // Even length palindrome
+
+    if (right1 - left1 > end - start) {
+      start = left1
+      end = right1
+    }
+    if (right2 - left2 > end - start) {
+      start = left2
+      end = right2
+    }
+  }
+
+  s.substring(start, end + 1)
+}
+
 }
